@@ -56,7 +56,7 @@ class CreateProject extends Command
         $config['projectRootPath'] = ROOTPATH . '/' . $config['projectName'];
         
         $this->checkValidInput($config);
-        
+        //Test
         $this->buildStructure($config);
         
     }
