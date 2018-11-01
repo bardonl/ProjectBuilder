@@ -4,11 +4,12 @@
 
 <p>Expect that the readme may change over time, some functionalities might change, disappear or be added to the Project Builder.</p>
 
-<h3>Requirements:<h3>
+<h3>Requirements:</h3>
 <ul>
-<li> <a href="https://getcomposer.org/download/">Composer</a> (Preferably installed globally rather than in the project itself because the application can install frameworks for you if so desired)</li>
-<li> <a href="https://laravel.com/docs/5.7/installation">Laravel</a></li>
+<li><a href="https://getcomposer.org/download/">Composer</a> (Preferably installed globally rather than in the project itself because the application can install frameworks for you if so desired)</li>
+<li><a href="https://laravel.com/docs/5.7/installation">Laravel</a></li>
 </ul>
+
 <p>This application will help you to set up your default files for any new webapplication</p>
 
 <p>This console application will ask for a few configurations which are need to build a default webapplication to your preferences.</p>
