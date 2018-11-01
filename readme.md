@@ -4,6 +4,8 @@
 
 <p>Expect that the readme may change over time, some functionalities might change, disappear or be added to the Project Builder.</p>
 
+<p>Feel free to contribute or give feedback!</p>
+
 <h3>Requirements:</h3>
 <ul>
 <li><a href="https://getcomposer.org/download/">Composer</a> (Preferably installed globally rather than in the project itself because the application can install frameworks for you if so desired)</li>

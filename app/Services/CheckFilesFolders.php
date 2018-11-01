@@ -16,6 +16,7 @@ class CheckFilesFolders
     use DependencyInjectionManagerTrait;
     
     /**
+     * Check if the folder already exists
      * @var $path
      *
      * @return boolean (true/false)
