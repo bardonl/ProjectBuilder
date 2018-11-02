@@ -57,7 +57,7 @@ class CreateProject extends Command
         
         $this->checkValidInput($config);
 
-        $this->buildStructure($config);
+        //$this->buildStructure($config);
         
         $this->call('add:frameworks', ['config' => $config]);
     }

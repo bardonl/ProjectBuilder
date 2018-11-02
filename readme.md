@@ -45,3 +45,5 @@
 
 <p> Once this command is called it will check if the project name is valid, has it been used by another project.
 Once the check has been complete the application will create the project root folder with the specified name within the same directory as the builder itself. (This might change so you can specify where you want to place your project.)</p>
+
+<p>You can specify your own frameworks in Frameworks.json, all you need to do is specify the name and the repository/downloadlink</p>
