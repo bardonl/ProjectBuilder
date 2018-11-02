@@ -22,7 +22,7 @@ class CreateProject extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'This is the base command that is used to start building your project';
 
     /**
      * Create a new command instance.
@@ -56,9 +56,10 @@ class CreateProject extends Command
         $config['projectRootPath'] = ROOTPATH . '/' . $config['projectName'];
         
         $this->checkValidInput($config);
-        //Test
-        $this->buildStructure($config);
+
+        //$this->buildStructure($config);
         
+        $this->call('add:frameworks', ['config' => $config]);
     }
     
     /**

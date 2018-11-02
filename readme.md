@@ -4,10 +4,13 @@
 
 <p>Expect that the readme may change over time, some functionalities might change, disappear or be added to the Project Builder.</p>
 
+<p>Feel free to contribute or give feedback!</p>
+
 <h3>Requirements:</h3>
 <ul>
 <li><a href="https://getcomposer.org/download/">Composer</a> (Preferably installed globally rather than in the project itself because the application can install frameworks for you if so desired)</li>
 <li><a href="https://laravel.com/docs/5.7/installation">Laravel</a></li>
+<li> PHP7 </li>
 </ul>
 
 <p>This application will help you to set up your default files for any new webapplication</p>
@@ -37,9 +40,11 @@
 </ul>
 
 <h3> How do you use it? </h3>
-<p> Open your CLI and navigate to the place where you have put the Project Builder </p>
+<p> Open your CLI and navigate to the directory where you have put the Project Builder </p>
 
 ```php artisan build:project ProjectName```
 
 <p> Once this command is called it will check if the project name is valid, has it been used by another project.
 Once the check has been complete the application will create the project root folder with the specified name within the same directory as the builder itself. (This might change so you can specify where you want to place your project.)</p>
+
+<p>You can specify your own frameworks in Frameworks.json, all you need to do is specify the name and the repository/downloadlink</p>

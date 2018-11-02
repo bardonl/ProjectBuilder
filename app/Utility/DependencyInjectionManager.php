@@ -51,6 +51,9 @@ class DependencyInjectionManager
         return $this->checkFilesFolders;
     }
     
+    /**
+     * @return FileFolderGeneratorService
+     */
     function getFileFolderGeneratorService()
     {
         if (($this->fileFolderGeneratorService instanceof FileFolderGeneratorService) === false)
