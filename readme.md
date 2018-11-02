@@ -10,6 +10,7 @@
 <ul>
 <li><a href="https://getcomposer.org/download/">Composer</a> (Preferably installed globally rather than in the project itself because the application can install frameworks for you if so desired)</li>
 <li><a href="https://laravel.com/docs/5.7/installation">Laravel</a></li>
+<li> PHP7 </li>
 </ul>
 
 <p>This application will help you to set up your default files for any new webapplication</p>
@@ -39,7 +40,7 @@
 </ul>
 
 <h3> How do you use it? </h3>
-<p> Open your CLI and navigate to the place where you have put the Project Builder </p>
+<p> Open your CLI and navigate to the directory where you have put the Project Builder </p>
 
 ```php artisan build:project ProjectName```
 
