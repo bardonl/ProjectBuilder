@@ -1,13 +1,12 @@
 {
   "frameworks": [
     {"name":"Laravel", "repo":"laravel/laravel"},
-    {"name":"CodeIgniter", "repo":""},
-    {"name":"Symfony", "repo":""},
-    {"name":"Zend", "repo":""},
-    {"name":"Phalcon", "repo":""},
-    {"name":"CakePHP", "repo":""},
-    {"name":"Yii", "repo":""},
-    {"name":"FeulPHP", "repo":""},
+    {"name":"CodeIgniter", "repo":"bcit-ci/CodeIgniter"},
+    {"name":"Symfony", "repo":"symfony/website-skeleton"},
+    {"name":"Zend", "repo":"zendframework/zendframework"},
+    {"name":"CakePHP", "repo":"cakephp/app"},
+    {"name":"Yii", "repo":"yiisoft/yii2-app-basic"},
+    {"name":"FeulPHP", "repo":"fuel/fuel"},
     {"name":"Other", "repo":""}
   ]
 }
