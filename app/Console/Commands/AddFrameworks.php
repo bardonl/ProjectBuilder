@@ -36,7 +36,7 @@ class AddFrameworks extends Command
 
     /**
      * Execute the console command.
-     *
+     * Test
      */
     public function handle()
     {
