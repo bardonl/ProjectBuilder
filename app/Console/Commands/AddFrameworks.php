@@ -37,7 +37,8 @@ class AddFrameworks extends Command
 
     /**
      * Execute the console command.
-     * Test
+     *
+     * @todo error handling
      */
     public function handle()
     {
@@ -120,9 +121,12 @@ class AddFrameworks extends Command
         }
     }
     
+    /**
+     * @param $frameworkLocation
+     * @param $config
+     */
     public function locateFramework($frameworkLocation, $config)
     {
-    
         $found = false;
         
         while ($found === false){
@@ -156,6 +160,14 @@ class AddFrameworks extends Command
         }
     }
     
+    /**
+     * @param $source
+     * @param $destination
+     *
+     * Would love to recreate this with laravel function and the DependencyInjectionManager
+     * But it will fall flat on its face when you do that.
+     * Need to look into that in the future
+     */
     function copyFramework($source, $destination) {
         $dir = opendir($source);
         @mkdir($destination);
@@ -177,9 +189,16 @@ class AddFrameworks extends Command
         closedir($dir);
     }
     
+    /**
+     * @param $frameworkLocation
+     *
+     * Download the framework from the internet using cURL to a zip file called TempFramework.zip (Everytime your download a new framework this file will be flushed beforehand)
+     */
     function downloadFramework($frameworkLocation)
     {
         try{
+            $this->flushTempFolders();
+            die;
             $zipFile = 'TempFramework.zip';
             $zipResource = fopen($zipFile, 'w+');
         
@@ -210,12 +229,57 @@ class AddFrameworks extends Command
             curl_close($ch);
             
             $this->info(filesize($zipFile) > 0? true : false);
-        
+    
+            $this->openTempZip();
+            
         } catch (Exception $e) {
             trigger_error(sprintf (
                 'curl failed with error #%d: %s',
                 $e->getCode(), $e->getMessage()),
                 E_USER_ERROR);
         }
+    }
+    
+    function openTempZip()
+    {
+        $zip = new \ZipArchive();
+        $fwResources =  $zip->open('TempFramework.zip');
+        if($fwResources === TRUE) {
+            $zip->extractTo('TempFramework');
+            $zip->close();
+        } else {
+            echo $fwResources;
+        }
+    }
+    
+    function flushTempFolders()
+    {
+       
+    
+        $zip = new \ZipArchive();
+        $fwRecources = $zip->open('TempFramework.zip');
+    
+        if ($fwRecources === true) {
+            for ($i = 0; $i <= $zip->numFiles; $i++) {
+                $zip->deleteIndex($i);
+            }
+        }
+
+        $this->delete_files('C:\wamp64\www\ProjectBuilder\TempFramework/*');
+//        fclose('TempFramework/');
+//        $files = glob('TempFramework/*'); // get all file names
+//        array_map('unlink', array_filter((array)glob('TempFramework/*')));
+//        foreach($files as $file){ // iterate files
+//            if(is_file($file)) {
+//                array_map('unlink', array_filter((array) glob("TempFramework/*")));
+//                unlink($file); // delete file
+//            }
+//        }
+    
+    }
+    
+    function delete_files($file)
+    {
+
     }
 }

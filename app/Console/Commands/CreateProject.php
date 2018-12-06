@@ -38,6 +38,8 @@ class CreateProject extends Command
      * Execute the console command.
      *
      * @return mixed
+     *
+     * @todo error handling
      */
     public function handle()
     {
