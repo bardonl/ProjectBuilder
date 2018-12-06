@@ -8,9 +8,9 @@
 
 <h3>Requirements:</h3>
 <ul>
-<li><a href="https://getcomposer.org/download/">Composer</a> (Preferably installed globally rather than in the project itself because the application can install frameworks for you if so desired)</li>
+<li><a href="https://getcomposer.org/download/">Composer</a> (Preferably installed globally rather than in the project itself because the application can install frameworks via composer for you if so desired)</li>
 <li><a href="https://laravel.com/docs/5.7/installation">Laravel</a></li>
-<li> PHP7 </li>
+<li> PHP7 and cURL if not enabled by default </li>
 </ul>
 
 <p>This application will help you to set up your default files for any new webapplication</p>
