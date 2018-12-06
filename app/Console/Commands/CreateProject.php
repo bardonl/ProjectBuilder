@@ -81,7 +81,7 @@ class CreateProject extends Command
      * Parse the config array to the structure builder service, when this is done the build function checks if the project already exists.
      * If the project already exists the user is prompted to choose a new project name
      *
-     * @param $config
+     * @array $config
      *
      * @return void
      */

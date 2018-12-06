@@ -2,10 +2,12 @@
 
 namespace App\Utility;
 
+use App\Services\ArrayifyService;
 use Faker\Provider\File;
 use Illuminate\Filesystem\Filesystem;
 use App\Services\CheckFilesFolders;
 use App\Services\FileFolderGeneratorService;
+use Symfony\Component\Yaml\Tests\A;
 
 class DependencyInjectionManager
 {
@@ -24,6 +26,11 @@ class DependencyInjectionManager
      * @var FileFolderGeneratorService
      */
     protected $fileFolderGeneratorService;
+    
+    /**
+     * @var ArrayifyService
+     */
+    protected $arrayifyService;
     
     /**
      * @return Filesystem
@@ -62,5 +69,15 @@ class DependencyInjectionManager
         }
         
         return $this->fileFolderGeneratorService;
+    }
+    
+    function getArrayifyService()
+    {
+        if (($this->arrayifyService instanceof ArrayifyService) === false)
+        {
+            $this->arrayifyService = new ArrayifyService();
+        }
+        
+        return $this->arrayifyService;
     }
 }

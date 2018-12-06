@@ -21,13 +21,14 @@ class FileFolderGeneratorService
         if($this->dependencyInjectionManager()->getCheckFilesFolders()->doesExist($config['projectRootPath']))
         {
             return true;
-        }
-        
-        $this->dependencyInjectionManager()->getFileSystem()->makeDirectory( $config['projectRootPath'], 755, true);
+        } else {
     
-        if($this->dependencyInjectionManager()->getCheckFilesFolders()->doesExist($config['projectRootPath']))
-        {
-            echo 'Root created successfully';
+            $this->dependencyInjectionManager()->getFileSystem()->makeDirectory( $config['projectRootPath'], 755, true);
+    
+            if($this->dependencyInjectionManager()->getCheckFilesFolders()->doesExist($config['projectRootPath']))
+            {
+                echo 'Root created successfully';
+            }
         }
     }
 }
