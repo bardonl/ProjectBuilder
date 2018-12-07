@@ -5,6 +5,8 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Traits\DependencyInjectionManagerTrait;
 use Mockery\Exception;
+use Symfony\Component\Finder\Iterator\RecursiveDirectoryIterator;
+use RecursiveIteratorIterator;
 
 class AddFrameworks extends Command
 {
@@ -198,7 +200,6 @@ class AddFrameworks extends Command
     {
         try{
             $this->flushTempFolders();
-            die;
             $zipFile = 'TempFramework.zip';
             $zipResource = fopen($zipFile, 'w+');
         
@@ -254,8 +255,6 @@ class AddFrameworks extends Command
     
     function flushTempFolders()
     {
-       
-    
         $zip = new \ZipArchive();
         $fwRecources = $zip->open('TempFramework.zip');
     
@@ -264,22 +263,18 @@ class AddFrameworks extends Command
                 $zip->deleteIndex($i);
             }
         }
-
-        $this->delete_files('C:\wamp64\www\ProjectBuilder\TempFramework/*');
-//        fclose('TempFramework/');
-//        $files = glob('TempFramework/*'); // get all file names
-//        array_map('unlink', array_filter((array)glob('TempFramework/*')));
-//        foreach($files as $file){ // iterate files
-//            if(is_file($file)) {
-//                array_map('unlink', array_filter((array) glob("TempFramework/*")));
-//                unlink($file); // delete file
-//            }
-//        }
-    
-    }
-    
-    function delete_files($file)
-    {
-
+        
+        $dir = ROOTPATH . '\ProjectBuilder\TempFramework';
+        $it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
+        $files = new RecursiveIteratorIterator($it,
+            RecursiveIteratorIterator::CHILD_FIRST);
+        foreach($files as $file) {
+            if ($file->isDir()){
+                @rmdir($file->getRealPath());
+            } else {
+                @unlink($file->getRealPath());
+            }
+        }
+        @rmdir($dir);
     }
 }
