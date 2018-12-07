@@ -15,8 +15,8 @@
 
 <p>This application will help you to set up your default files for any new webapplication</p>
 
-<p>This console application will ask for a few configurations which are need to build a default webapplication to your preferences.</p>
-<p>This consists of:</p>
+<p>This console application will ask for a few configurations which are needed to build a default webapplication to your preferences.</p>
+<p>This includes:</p>
 <ul>
 <li>Project name</li>
 <li>Frameworks needed (Such as Symfony or Laravel)</li>
@@ -45,6 +45,4 @@
 ```php artisan build:project ProjectName```
 
 <p> Once this command is called it will check if the project name is valid, has it been used by another project.
-Once the check has been complete the application will create the project root folder with the specified name within the same directory as the builder itself. (This might change so you can specify where you want to place your project.)</p>
-
-<p>You can specify your own frameworks in Frameworks.json, all you need to do is specify the name and the repository/downloadlink</p>
+Once the check has been completed the application will create the project root folder with the specified name within the same root directory as the builder itself (e.g. C:/Wamp64/www/). (This might change so you can specify where you want to place your project.)</p>
